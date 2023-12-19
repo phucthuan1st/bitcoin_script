@@ -1,0 +1,8 @@
+Systax Opcode in bitcoinlib
+
+op_dup()
+op_checksign(message,_=none)
+op_hash160()
+op_equalverify()
+op_checkmultisig()
+op_checkmultisigverify(message, data=None)
