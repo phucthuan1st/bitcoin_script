@@ -1,0 +1,32 @@
+--------------------------------------------------------------------
+=== WALLET ===
+ ID                             17
+ Name                           Wallet_test
+ Owner
+ Scheme                         bip32
+ Multisig                       False
+ Witness type                   legacy
+ Main network                   testnet
+ Latest update                  None
+
+= Wallet Master Key =
+ ID                             117s
+ Private                        True
+ Depth                          0
+
+- NETWORK: testnet -
+- - Keys
+  122 m/44'/1'/0'/0/0              n4Ps2sSBqMbdH5kiebis6s8QaPQqLJGHHw            address index 0                     0.00011460 TBTC
+  148 m/44'/1'/0'/0/1              mqg6eJMUETe87MKeceWGzoUevVmSapwhjB            address index 1                     0.00000000 TBTC
+
+- - Transactions Account 0 (2)
+e848f88ed58ef57d98026d63dae618b2e0d4eb7b951ade32bb5477e6b3b4c254          n4Ps2sSBqMbdH5kiebis6s8QaPQqLJGHHw       78       0.00006000 TBTC U
+6343769ede315dcc9c6a5bdc2a5bd87509c65c6d1b1f8283b22cbf2537c15cd9          n4Ps2sSBqMbdH5kiebis6s8QaPQqLJGHHw       77       0.00005460 TBTC U
+
+= Balance Totals (includes unconfirmed) =
+testnet              (Account 0)               0.00011460 TBTC
+
+
+Private_key 1c0c0e74e9ee4509bbf47a9769d28de853d63659669a147c0fa2ca474c9a06e3
+Public_key tpubDD17fL7De9AzdsfbJ6xRLfuL6dtNnzJzVhy6ei6GJ8D15FkN6qBTs6iCWWaMgMmAC72W7cjPeMLjGFhiKP2Qtg1PwHkRhbC7TSm9hLREfHP
+Address n4Ps2sSBqMbdH5kiebis6s8QaPQqLJGHHw
