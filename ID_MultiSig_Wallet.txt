@@ -1,0 +1,67 @@
+Public Key 1: 03fba20a7ec73d77a75ff16c3d234dc46d3a33aee91ac67a8c9e73a99723c6d826
+Public Key 2: 02ec69bf1b0003775fbc384a23648cca2dba2fef5fc88b707bce2ac58e278cbef5
+Deposit testnet bitcoin to this address to create transaction:  2N2WJF2gXErWzKiSD3iEAsEgANsu6Gqaf8w
+Deposit testnet bitcoin to this address to create transaction:  2N2WJF2gXErWzKiSD3iEAsEgANsu6Gqaf8w
+
+--------------------------------------------------------------------
+Wallet 1
+=== WALLET ===
+ ID                             7
+ Name                           multisig_cosigner1
+ Owner
+ Scheme                         bip32
+ Multisig                       True
+ Multisig Wallet IDs            8, 9
+ Cosigner ID                    0
+ Witness type                   legacy
+ Main network                   testnet
+ Latest update                  2020-04-26 21:12:59
+
+= Multisig Public Master Keys =
+    0  23 tpubDA4859P43XpUzKuZE2VSCo3yjVXAdXgKkx4xCKp97zyYzbwvSUaMMFwrEE5L1Nsd5xAMnJ2gnA8V3PAZ2ozxEbPXKU8jadvDHQfv6r9iyKi bip32  main     *
+    1  28 tpubDA19wrcJ5NXhETJp7NKrKVX7F3G32c46wpQjDdQo5YwqdjBeNViTFdx7HyV98vEUTFhXvTG528Uh4Ps1Pe6Si1brUB5AKDx8r94UspBHwpM bip32  cosigner 
+For main keys a private master key is available in this wallet to sign transactions. * cosigner key for this wallet
+
+- NETWORK: testnet -
+- - Keys
+   44 m/45'/0/0/0                  2NBrLTapyFqU4Wo29xG4QeEt8kn38KVWRRr           Multisig Key 43/27                  0.00000002 TBTC
+   47 m/45'/0/0/1                  2N2WJF2gXErWzKiSD3iEAsEgANsu6Gqaf8w           Multisig Key 46/45                  0.00000000 TBTC
+
+- - Transactions Account 0 (1)
+da42a1e19cabf5cd76aef087d8fc6aae2b78e58dd90d9b0cc5523b67237f0807         2NBrLTapyFqU4Wo29xG4QeEt8kn38KVWRRr   821625       0.00000002 TBTC U
+
+= Balance Totals (includes unconfirmed) =
+testnet              (Account 0)               0.00000002 TBTC
+
+
+
+--------------------------------------------------------------------
+Wallet 2
+=== WALLET ===
+ ID                             10
+ Name                           multisig_cosigner2
+ Owner
+ Scheme                         bip32
+ Multisig                       True
+ Multisig Wallet IDs            11, 12
+ Cosigner ID                    0
+ Witness type                   legacy
+ Main network                   testnet
+ Latest update                  2020-04-26 21:12:59
+
+= Multisig Public Master Keys =
+    0  32 tpubDA19wrcJ5NXhETJp7NKrKVX7F3G32c46wpQjDdQo5YwqdjBeNViTFdx7HyV98vEUTFhXvTG528Uh4Ps1Pe6Si1brUB5AKDx8r94UspBHwpM bip32  main     *
+    1  37 tpubDA4859P43XpUzKuZE2VSCo3yjVXAdXgKkx4xCKp97zyYzbwvSUaMMFwrEE5L1Nsd5xAMnJ2gnA8V3PAZ2ozxEbPXKU8jadvDHQfv6r9iyKi bip32  cosigner
+For main keys a private master key is available in this wallet to sign transactions. * cosigner key for this wallet
+
+- NETWORK: testnet -
+- - Keys
+   51 m/45'/0/0/0                  2NBrLTapyFqU4Wo29xG4QeEt8kn38KVWRRr           Multisig Key 36/50                  0.00000002 TBTC
+   54 m/45'/0/0/1                  2N2WJF2gXErWzKiSD3iEAsEgANsu6Gqaf8w           Multisig Key 52/53                  0.01923299 TBTC
+
+- - Transactions Account 0 (2)
+da42a1e19cabf5cd76aef087d8fc6aae2b78e58dd90d9b0cc5523b67237f0807         2NBrLTapyFqU4Wo29xG4QeEt8kn38KVWRRr   821625       0.00000002 TBTC U
+aa0e0ec8cbaa5b04e08f77e9f198e6ebd0b1cf278434081d9619ef5f61166dc1         2N2WJF2gXErWzKiSD3iEAsEgANsu6Gqaf8w    11407       0.01923299 TBTC U
+
+= Balance Totals (includes unconfirmed) =
+testnet              (Account 0)               0.01923301 TBTC
