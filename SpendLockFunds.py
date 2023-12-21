@@ -3,6 +3,7 @@ from bitcoinlib.values import *
 
 def spendLockFunds(wallet: Wallet, amount: float, destination_address: String):
     wallet.info()
+    amount = int(amount * 1000000)
 
     prepared_Tx = wallet.send_to(destination_address, amount, network='testnet', offline=True)
     prepared_Tx.info()
