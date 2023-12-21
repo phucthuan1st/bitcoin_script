@@ -8,7 +8,7 @@ def create_wallet(args):
 
 def spend_mode(args):
     private_key = args.privatekey or input("Enter private key: ")
-    amount = int(args.amount) or int(input("Amount to send: "))
+    amount = float(args.amount) or float(input("Amount to send: "))
     destination_address = args.destination or input("Destination address: ")
     wallet_name = args.walletname or input("Wallet name: ")
 
