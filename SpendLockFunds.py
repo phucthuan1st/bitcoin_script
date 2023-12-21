@@ -1,11 +1,7 @@
 from bitcoinlib.wallets import *
 from bitcoinlib.values import *
 
-def spendLockFunds(wallet: Wallet, amount: float, destination_address: String):
-    wallet.info()
-    wallet.utxos_update()
-    amount = int(amount * 100000000)
-
+def spendLockFunds(wallet: Wallet, amount: int, destination_address: String):
     prepared_Tx = wallet.send_to(destination_address, amount, network='testnet', offline=True)
     prepared_Tx.info()
     confirm = input("Do you want to send above transaction? (Y/n): ")

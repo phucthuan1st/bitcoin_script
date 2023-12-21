@@ -39,7 +39,7 @@ def OpenOrCreateWalletWithPrivKey(private_key=None, wallet_name=None, network='t
         wallet_name = input("Enter your wallet name: ")
 
     w = wallet_create_or_open(wallet_name, private_key, network=network)
-    print("Infomation of Wallet")
+    print("Retrieving information of Wallet")
     w.utxos_update()
     w.info()
 
