@@ -3,6 +3,13 @@ from SpendLockFunds import *
 import sys
 
 def main():
+    if len(sys.argv) < 2 or sys.argv[1] in ['help', '--help', None]:
+        print("Usage:")
+        print("    python main.py create")
+        print("    python main.py spend --privatekey <privatekey> --amount <amount> --destination <destination> --walletname <walletname>")
+        print("    python your_script.py spend -p <privatekey> -a <amount> -d <destination> -n <walletname>")
+        return
+    
     mode = sys.argv[1]
 
     if mode == 'create':
