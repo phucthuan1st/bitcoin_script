@@ -2,7 +2,7 @@ from bitcoinlib.wallets import *
 from bitcoinlib.values import *
 
 def spendLockFunds(wallet: Wallet, amount: float, destination_address: String):
-    w.info()
+    wallet.info()
 
     prepared_Tx = wallet.send_to(destination_address, amount, network='testnet', offline=True)
     prepared_Tx.info()

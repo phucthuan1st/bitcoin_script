@@ -11,12 +11,12 @@ def PrintMenuAddress():
     print("3.Exit program")
 
 # Function to generate a random key and create a wallet
-def CreateWalletWithRandomPrivKey():
-    k = Key(network='testnet')
+def CreateWalletWithRandomPrivKey(network='testnet'):
+    k = Key(network=network)
     private_key = k.private_hex
     wallet_name = input("Enter wallet name: ")
 
-    w = wallet_create_or_open(wallet_name, private_key, network='testnet')
+    w = wallet_create_or_open(wallet_name, private_key, network=network)
     print("Infomation of Wallet")
     w.utxos_update()
     w.info()
@@ -31,14 +31,14 @@ def CreateWalletWithRandomPrivKey():
     return w
 
 # Function to create a wallet using user-input private key
-def OpenOrCreateWalletWithPrivKey(private_key=None, wallet_name=None):
+def OpenOrCreateWalletWithPrivKey(private_key=None, wallet_name=None, network='testnet'):
     if private_key is None:
         private_key = input("Enter your private key: ")
 
     if wallet_name is None:
         wallet_name = input("Enter your wallet name: ")
 
-    w = wallet_create_or_open(wallet_name, private_key, network='testnet')
+    w = wallet_create_or_open(wallet_name, private_key, network=network)
     print("Infomation of Wallet")
     w.utxos_update()
     w.info()

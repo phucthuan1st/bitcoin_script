@@ -1,46 +1,42 @@
 from WalletCreation import *
 from SpendLockFunds import *
 import sys
+import argparse
+
+def create_wallet(args):
+    WalletCreation()
+
+def spend_mode(args):
+    private_key = args.privatekey or input("Enter private key: ")
+    amount = args.amount or float(input("Amount to send: "))
+    destination_address = args.destination or input("Destination address: ")
+    wallet_name = args.walletname or input("Wallet name: ")
+
+    wallet = OpenOrCreateWalletWithPrivKey(private_key=private_key, wallet_name=wallet_name)
+    spendLockFunds(wallet=wallet, amount=amount, destination_address=destination_address)
 
 def main():
+    parser = argparse.ArgumentParser(description="Manage Bitcoin wallets and perform transactions.")
+    subparsers = parser.add_subparsers(dest='mode', help='Available modes: wallet, spend')
+
+    # Wallet mode
+    wallet_parser = subparsers.add_parser('wallet', help='Create a new wallet')
+    wallet_parser.set_defaults(func=create_wallet)
+
+    # Spend mode
+    spend_parser = subparsers.add_parser('spend', help='Send an amount of tBTC to a destination address using your wallet')
+    spend_parser.add_argument("-p", "--privatekey", help="Private key")
+    spend_parser.add_argument("-a", "--amount", help="Amount to send")
+    spend_parser.add_argument("-d", "--destination", help="Destination address")
+    spend_parser.add_argument("-n", "--walletname", help="Wallet name")
+    spend_parser.set_defaults(func=spend_mode)
+
     if len(sys.argv) < 2 or sys.argv[1] in ['help', '--help', None]:
-        print("Usage:")
-        print("    python main.py wallet")
-        print("    python main.py spend --privatekey <privatekey> --amount <amount> --destination <destination> --walletname <walletname>")
-        print("    python your_script.py spend -p <privatekey> -a <amount> -d <destination> -n <walletname>")
+        parser.print_help()
         return
-    
-    mode = sys.argv[1]
-    print(f'Mode: %s' % mode)
 
-    if mode == 'wallet':
-        WalletCreation()
-        return
-    elif mode == 'spend':
-        import argparse
-        parser = argparse.ArgumentParser(
-            usage="""
-                python main.py spend --privatekey <privatekey> --amount <amount>
-                                     --destination <destination> --walletname <walletname>
-                python your_script.py spend -p <privatekey> -a <amount> -d <destination> -n <walletname>
-            """,
-            description="Send an amount of tBTC to destination address using your wallet"
-        )
+    args = parser.parse_args()
+    args.func(args)
 
-        parser.add_argument("-p", "--privatekey", help="Private key", required=True)
-        parser.add_argument("-a", "--amount", help="Amount to send", required=True)
-        parser.add_argument("-d", "--destination", help="Destination address", required=True)
-        parser.add_argument("-n", "--walletname", help="Wallet name", required=True)
-
-        args = parser.parse_args()
-
-        private_key = args.privatekey
-        amount = args.amount
-        destination_address = args.destination
-        wallet_name = args.walletname
-
-        wallet = OpenOrCreateWalletWithPrivKey(private_key=private_key, wallet_name=wallet_name)
-        spendLockFunds(wallet=wallet, amount=amount, destination_address=destination_address)
-    
 if __name__ == "__main__":
     main()
