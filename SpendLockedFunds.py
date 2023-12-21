@@ -2,7 +2,7 @@ from bitcoinlib.transactions import Transaction
 from bitcoinlib.wallets import wallet_create_or_open
 from bitcoinlib.keys import HDKey
 
-def create_and_send_transaction(key1, key2, amount, destination_address, network='testnet'):
+def create_and_send_transaction(key1, key2, amount, network='testnet'):
     k1 = HDKey(key1, network=network)
     k2 = HDKey(key2, network=network)
 
@@ -14,6 +14,9 @@ def create_and_send_transaction(key1, key2, amount, destination_address, network
 
     # Add the input (the multisig address)
     tx.add_input(w1.get_key().address, amount)
+
+    # Ask the user for the destination address
+    destination_address = input("Enter the destination address: ")
 
     # Add the output (the address to send the bitcoins to)
     tx.add_output(destination_address, amount)
@@ -27,5 +30,4 @@ def create_and_send_transaction(key1, key2, amount, destination_address, network
 key1 = 'tprv8ZgxMBicQKsPd1Q44tfDiZC98iYouKRC2CzjT3HGt1yYw2zuX2awTotzGAZQEAU9bi2M5MCj8iedP9MREPjUgpDEBwBgGi2C8eK5zNYeiX8'
 key2 = 'tprv8ZgxMBicQKsPeUbMS6kswJc11zgVEXUnUZuGo3bF6bBrAg1ieFfUdPc9UHqbD5HcXizThrcKike1c4z6xHrz6MWGwy8L6YKVbgJMeQHdWDp'
 amount = 10000
-destination_address = 'miZ8nR5AWhLXBUgEynQH9SHKURMFAiRqhD'
-create_and_send_transaction(key1, key2, amount, destination_address)
+create_and_send_transaction(key1, key2, amount)
